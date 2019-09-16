@@ -57,7 +57,6 @@ then
   git add .
   git commit -m "Regenerate build artifacts."
   git push --set-upstream origin $PUSH_BRANCH
-  git tag -l
 else 
   echo "Working tree clean. Nothing to commit."
 fi
