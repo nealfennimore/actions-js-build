@@ -50,7 +50,7 @@ EOF
 
 # This section only runs if there have been file changes
 echo "Checking for uncommitted changes in the git working tree."
-if ! git diff --quiet || git ls-files -o --exclude-standard &> /dev/null
+if ! git diff --quiet || test $( git ls-files -o --exclude-standard | wc -l ) -gt 0
 then 
   git_setup
   git checkout $PUSH_BRANCH
